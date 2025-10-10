@@ -28,6 +28,11 @@ jobs:
             knitr
             rmarkdown
             xfun
+            VGAM
+            beeswarm
+            ellipse
+            numDeriv
+            pROC
 
       - name: Build book via Rscript
         # try `make`, then `make gitbook`, then fallback to bookdown::render_book;
