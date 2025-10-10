@@ -414,10 +414,10 @@ goes to your conclusions. So let's give an example. My example is all
 data science students think that prediction is inference. That's an
 assumption I'm going to make. All data science students think prediction
 is inference. All data science students think prediction is inference.
-Second fact, Arunesh thinks... Arunesh is a data science student, right?
-Yeah. So Arunesh is a data science student. All data science students
+Second fact, Adam (name made up) thinks... Adam is a data science student, right?
+Yeah. So Adam is a data science student. All data science students
 think that prediction is inference. From these two facts I can deduce,
-logically deduce, that Arunesh thinks that prediction is inference. So
+logically deduce, that Adam thinks that prediction is inference. So
 if I believe the premises, my conclusion follows logically from those.
 So this is what we call deductive inference. It means applying logical
 rules, mathematical rules, you could say, in order to build theories.
@@ -541,8 +541,8 @@ is it forces me to be slow. So I want to be slow here. So can we bring
 up a few more details about this argument? So in what sense is science
 deductive? So Popper's argument is that a scientist is somebody who...
 So basically, Popper, as every philosopher of science, was studying what
-scientists do, right? So Popper is somebody who lived in the 1930s. He
-actually was still alive in 2002. But he had lived in the times of Karl
+scientists do, right? So Popper is somebody who lived in the 1930s; he
+diead in 1994. But he had lived in the times of Karl
 Marx and Sigmund Freud, right? So Karl Marx is the person with the
 capital and stuff. Sigmund Freud, one of the early people who basically
 had a theory of... I actually don't know how to explain this well

@@ -4,8 +4,8 @@ rmd_files:
   - lecture-1.md
   - lecture-2.Rmd
   - lecture-2b.Rmd
-#  - lecture-3.Rmd
-#  - lecture-3b.Rmd
-#  - lecture-4.Rmd
-#  - lecture-5.Rmd
+  - lecture-3.Rmd
+  - lecture-3b.Rmd
+  - lecture-4.Rmd
+  - lecture-5.Rmd
 delete_merged_file: true
