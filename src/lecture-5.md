@@ -1674,7 +1674,7 @@ The additional term $2p$ has the effect that it "punishes" model complexity. Add
 
 The AIC difference between two models is in fact an estimation of the _out-of-sample deviance_. That is, if 
 
-$$\Delta \text{AIC} = 2\, \text{nLL}_{m} - 2p - (2\, \text{nLL}_{m^*} - 2p^*) \approx
+$$\Delta \text{AIC} = 2\, \text{nLL}_{m} + 2p - (2\, \text{nLL}_{m^*} + 2p^*) \approx
  2\, \hat{\text{nLL}}_{m} -  2\, \hat{\text{nLL}}_{m^*}
 $$
 
