@@ -1857,7 +1857,7 @@ I would pick the model that has the weight
 rather than the model that has the MPG
 because it assigns a higher likelihood to my data, right?
 
-Let's look again at the entire model fit (without cross-validation) for the "better" mpg model:
+Let's look again at the entire model fit (without cross-validation) for both models:
 
 ```{r mpgaic}
 model <- function( x, th ) 1/(1+exp(-th[1]-th[2]*x))
