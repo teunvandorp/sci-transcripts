@@ -41,10 +41,10 @@ Who has never heard of linear regression before?
 _(no one)_.
 Looks like you've all heard of linear regression before. That's good.
 
-You may have encountered linear regression in various Bachelor courses, including "Data Analysis", "Data Mining", and "AI". All of these cover some of the topics we'll cover here in more depth. I'll try not too repeat too much, but I'll go through some of the basic materials we'll need in the beginning
+You may have encountered linear regression in various Bachelor courses, including "Data Analysis", "Data Mining", and "AI". All of these cover some of the topics we'll cover here in more depth. I'll try not to repeat too much, but I'll go through some of the basic materials we'll need in the beginning
 just to make sure we're all on the same page.
 
-What I won't do is introduce probability theory from the beginning once again. If your background in probability theory is notvery solid – maybe because some earlier courses didn't go that well for you – I recommend this online class from MIT: <https://www.youtube.com/watch?v=1uW3qMFA9Ho&list=PLUl4u3cNGP60hI9ATjSFgLZpbNJ7myAg6>  which I think
+What I won't do is introduce probability theory from the beginning once again. If your background in probability theory is not very solid – maybe because some earlier courses didn't go that well for you – I recommend this online class from MIT: <https://www.youtube.com/watch?v=1uW3qMFA9Ho&list=PLUl4u3cNGP60hI9ATjSFgLZpbNJ7myAg6>  which I think
 really nicely covers the basic concepts of probability theory. The teacher is very good.
 
 Our first question in this class today is this one:
@@ -158,7 +158,7 @@ Good example. A number of people can't be negative. If we were to use a normal d
 But in practice, it could be that even if we model the number of people in this building with a normal distribution, the chance to actually get a negative number might be very small. For example, suppose we use a normal distribution with a mean of 600 and a standard deviation of 100. The chance to get a value of less than 0 is less then one in $10^9$. That probability is so small that we may well decide we're OK with this anyway.
 
 
-## Some example normal distribution
+## Some example normal distributions
 
 Now let's move on to statistical models, and let's start by recalling the perhaps best-known one: the normal distribution.
 
@@ -237,7 +237,7 @@ Such a model is called the _joint distribution_ of $X$ and $Y$.
 And then there's a second kind of probability model that looks like this:
 
 $$
-P( x \mid y )
+P( y \mid x )
 $$
 
 Does anyone recognize what this is?
@@ -247,7 +247,7 @@ Does anyone recognize what this is?
 Yes! For those of us who need a reminder, let's recall its definition:
 
 $$
-P( x \mid y ) = \frac{P(x,y)}{P(y)}
+P( y \mid x ) = \frac{P(x,y)}{P(x)}
 $$
 
 The conditional distribution models the probability of $Y$ _after_ $X$ has already been observed. We know what the value of $X$ is, and we ask: how does that change our belief (for epistemic probability) or the chance (for aleatorial probability) that $Y$ will occur? 
@@ -261,7 +261,7 @@ Whether that's a regression model, deep neural network, or some other machine le
 ## Generative versus discriminative models
 
 There's another useful way to distinguish two models of the type 
- $P(x,y)$ and $P(x \mid y)$, which we'll talk about now.
+ $P(x,y)$ and $P(y \mid x)$, which we'll talk about now.
 
 In the last three years, one kind of AI model became very powerful and popular – the so-called _generative AI_ model. And generative models are  models of the form
  
@@ -274,7 +274,7 @@ On the other hand, a model of the form
  $$P( y \mid x )$$
  
  is called a _discriminative_ model.
-For example, when we're trying to build a classifier, we would typically reach for a model o this second kind – such as a logistic regression model – rather than of the first kind (e.g., Naive Bayes).
+For example, when we're trying to build a classifier, we would typically reach for a model of this second kind – such as a logistic regression model – rather than of the first kind (e.g., Naive Bayes).
 
 
 There's an intuitive explanation for this general preference for discriminative models for prediction and classification. Thinking back about the definition of conditional probability,
@@ -317,7 +317,7 @@ In other words, if we have a generative model, we can generally use that to make
 
 
 For example, I could take ChatGPT and turn it into a classifier. But it does not work the other way around: I can't take a discriminative model and then make it generative.
-For instance, I have a classifier of cats versus dogs, I can't use that to make new pictures of cats and dogs.
+For instance, if I have a classifier of cats versus dogs, I can't use that to make new pictures of cats and dogs.
 But if I have a generative model that makes pictures of cats and dogs, it'll generally be easy to transform that to something that classifies cats versus dogs.
 For example, we could look at the inner layers of a network, extract them, and feed them to a regression model.
 
@@ -329,11 +329,11 @@ Interestingly, now with the new generative AI tools, we can often build classifi
 
 > Does this mean that we can in theory easily make an AI that would check, for example, student reports that use chat GPT?
 
-It’s possible in theory to build an AI that detects ChatGPT-written reports by training a classifier on latent representations of AI vs. human text. But in practice it wouldn’t be reliable because the classifier operates in what we call an _adversarial_ context: students will actively adjust their text until it passes. AI models are generally very vulnerable to such attacks. In image classification models, for instance, adversarially changing just a few pixels could make a pig get classified as an airplane. Therefore, while AI detectors can be built in principle, they will won't be reliable as they are too easy to fool.
+It’s possible in theory to build an AI that detects ChatGPT-written reports by training a classifier on latent representations of AI vs. human text. But in practice it wouldn’t be reliable because the classifier operates in what we call an _adversarial_ context: students will actively adjust their text until it passes. AI models are generally very vulnerable to such attacks. In image classification models, for instance, adversarially changing just a few pixels could make a pig get classified as an airplane. Therefore, while AI detectors can be built in principle, they won't be reliable as they are too easy to fool.
 
 > There's the saying when a measure becomes a target, it ceases to be a good measure.
 
-That's [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law). For example, if you' rank people by a metric, they'll attempt to game that metric.
+That's [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law). For example, if you rank people by a metric, they'll attempt to game that metric.
 If you judge me on how many papers I publish, I'll going to make sure my name goes on papers just for that reason. Likewise, If I run an AI detector on your work, you'll find out about it and find some way to fool it. So that's not something I believe can be done.
 
 ## Defining linear regression as a conditional probability model
@@ -416,9 +416,9 @@ the whole curve shifts.
 
 Now let's ask again: what does a value like `dnorm( 0, mean=1, sd=1 )` (=0.24, the value of the red curve at 0), mean exactly?
 
-We're assuming here that $X$ is a real number. There are a lot of real numbers – incountably infinitely many ones, in fact. So the value 0.24 can't be a probability. For any number drawn at random from the real line (no matter the distribution, as long as it's positive everywhere), the chance that this number is _exactly_ 0 is 0. 
+We're assuming here that $X$ is a real number. There are a lot of real numbers – uncountably infinitely many ones, in fact. So the value 0.24 can't be a probability. For any number drawn at random from the real line (no matter the distribution, as long as it's positive everywhere), the chance that this number is _exactly_ 0 is 0. 
 
-Let's convince ourselves that's ture by doing some simulations in R. 
+Let's convince ourselves that's true by doing some simulations in R. 
 In R, I can sample from random distributions
 using functions that start with the letter r, which 
 stands for draw a **r**andom number.
@@ -507,7 +507,7 @@ mean( 0 <= s & s <= 1 )
 ```
 
 
-Approximately 34%. Now let's verify that this matches what we get by integrating the density function $${\cal{N}(1,1)}$$. We can't do that analytically, but in R we have the integral available using the function `pnorm` command. For example, we can get the integral 
+Approximately 34%. Now let's verify that this matches what we get by integrating the density function $${\cal{N}(1,1)}$$. We can't do that analytically, but in R we have the integral available using the function `pnorm`. For example, we can get the integral 
 
 $$\int_{x=-\infty}^{1} {\cal N}(1,1)$$
 
@@ -561,7 +561,7 @@ plot(k, pbinom(k,n,p), type="h", lwd=2, col="steelblue",
 
 From the density plot, it's easier to see:
 
- * That the distribution is symmetric
+ * That the distribution is (roughly) symmetric
  * That the distribution's peak (most likely value) is at 15
  * That the distribution does not have very heavy tails (very small and very large values are unlikely)
 
@@ -578,7 +578,7 @@ and a probability distribution?
 The answer is: there are many
 different probability distributions, with both the Normal and the Laplace distribution being examples.
 
-From this plots, we can see that
+From these plots, we can see that
 
  * The Laplace distribution is "peakier", it has a "sharp" peak whereas the Normal distribution has a "round" peak
  * The Laplace distribution has heavier tails: 
@@ -591,7 +591,7 @@ the normal distribution rather than the Laplace distribution, gamma distribution
 
 > Is it some of the assumption you take based on the data?
 
-It's an assumption, yet, but there's generally no reason to believe a normal distribution works best. In fact, we can also make a regression models with Laplace errors, Cauchy distributed errors etc. But when we talk about "the" regression model,
+It's an assumption, yes, but there's generally no reason to believe a normal distribution works best. In fact, we can also make a regression model with Laplace errors, Cauchy distributed errors etc. But when we talk about "the" regression model,
 we typically refer to a model with normally distributed errors.
 
 Another question asked during the break was: does the regression function need to be linear? In fact it doesn't – the linear model is more flexible than you may think, and we'll return to that point later.
@@ -680,7 +680,7 @@ And I need  to make a prediction without using any other information. Plus, some
 Let's call my prediction $\mu$. I need to choose which value of $\mu$ I use. Let's say I choose $\mu=600$. A _loss function_ is a way to measure how good this prediction is.
 
 We could think of different possible loss functions. But we heard before of a loss function
-called the squared error, so let's start with that. Loss functions are often written using $L$, and they are a function of my prediction any the actual observation. For example, the _squared loss_ is 
+called the squared error, so let's start with that. Loss functions are often written using $L$, and they are a function of my prediction and the actual observation. For example, the _squared loss_ is 
 
 $$
 L( \mu, x ) = (x - \mu)^2 
@@ -794,8 +794,8 @@ $$\sum_{i=1}^n| x_i - \mu |$$
 
 we'll again consider the derivative
 
-$$\frac{\delta}{\delta \mu}\sum_{i=0}^n| x_i - \mu |=
-\sum_{i=0}^n \text{sign}(x_i - \mu) $$
+$$\frac{\delta}{\delta \mu}\sum_{i=1}^n| x_i - \mu |=
+\sum_{i=1}^n \text{sign}(x_i - \mu) $$
 
 where
 
@@ -811,7 +811,7 @@ _(This is technically not a derivative because the point at 0 is not continuous 
 Note that the expression $$\text{sign}(x_i - \mu)$$ looks a bit like a _zero-one-loss_: if I get my "prediction" $\mu$ right, then I am not punished, but if I get it wrong, I get punished the same no matter how far I'm off. Now, the condition
 
 $$
-\sum_{i=0}^n \text{sign}(x_i - \mu) = 0 
+\sum_{i=1}^n \text{sign}(x_i - \mu) = 0 
 $$
 
 is satisfied if exactly as many predictions are too low ($\mu < x_i$) as are too high ($\mu > x_i$). This is exactly what using the median for $\mu$ achieves. For example, suppose my samples are
@@ -821,7 +821,7 @@ $$ x_1 = 1, x_2 = 2, x_3 = 9 $$
 Then I must use $$\mu=2$$ to get the minimum loss
 
 $$
-\sum_{i=0}^n \text{sign}(x_i - \mu) = -1 + 0 + 1 = 0 
+\sum_{i=1}^n \text{sign}(x_i - \mu) = -1 + 0 + 1 = 0 
 $$
 
 and no other value for $\mu$ will achieve this.
@@ -877,7 +877,7 @@ Another reason squared loss is often preferred is that it can often be minimized
     \sum_i L( \theta, x ) = \sum_i (x_i-\theta)^2 
   $$
    
-   over a the sample $x_1, \ldots x_n$. What will the resulting value of $\theta$ be? 
+   over the sample $x_1, \ldots x_n$. What will the resulting value of $\theta$ be? 
    
 
   
