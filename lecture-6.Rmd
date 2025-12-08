@@ -334,6 +334,9 @@ is actually a quite nice fit for this case.
 
 ### Example: Bayesian inference of a fraction
 
+For a quick comparison between Bayesian vs. Frequentist Statistics by Stats with Brian:
+https://www.youtube.com/watch?v=qJcv7VHwqcA
+
 So let's look at one example.
 So I had just mentioned that in the chat GPT,
 the newest version seems to do perfectly on all my questions.

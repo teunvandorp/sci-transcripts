@@ -35,6 +35,9 @@ and that you can formulate specific research questions.
 
 ## Linear regression
 
+Interesting playlist about various concepts in Linear Regression and Linear Models by StatQuest with Josh Starmer:
+https://www.youtube.com/watch?v=2AQKmw14mHM&list=PLblh5JKOoLUIzaEkCLIUxQFjPIlapw8nU
+
 Today we're going to cover the topic of linear regression.
 Most of you should have prior experience with linear regression.
 Who has never heard of linear regression before?
