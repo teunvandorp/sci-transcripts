@@ -9,6 +9,12 @@ _(This was a student contribution for item 3. These contributions are included i
 
 A student showed us a set of slides (<https://www.stat.uchicago.edu/~yibi/teaching/stat224/L13.pdf>) he had come across online that discussed how we can use data transformations – like the logarithmic transformation and the Box-Cox transformation – to make data more amenable for linear regression. These transformations help reduce skewness and stabilize variance, which helps with many regression models that assume that the variance of the "errors" (differences between the model and the data) is the same across all values of the predictors (the so-called _homoschedasticity_ assumption). Such transformations are useful because they allow researchers to still apply simple linear models to complex data. However, the use of transformations can make the results a bit harder to interpret (e.g. log transformation) or even near-impossible to interpret (e.g. Box-Cox transformation). 
 
+### Sinusoidal Model Fitting
+_(This was a student contribution for item 3. These contributions are included in the transcript, but they will not be tested in the exams.)_ 
+
+For portfolio Item 3, I would like to add a nice [YouTube video](https://www.youtube.com/watch?v=RPr6p3d8lj4) which explains how to fit a sinusoidal model to data. It starts with some explanation for how a sinusoidal function works and the parameters of the function. Finally, it shows a simple example of fitting a sinusoidal model to data (by hand). It is a bit more maths-heavy, but it helped me understand more about how sinusoidal functions work and what each parameter means.
+
+
 ## Introduction
 
 
@@ -834,4 +840,3 @@ When fitting a Gaussian linear regression model using maximum likelihood, what h
 1. Given the fitted logistic regression model from the lecture: P(automatic | weight) = 1/(1+exp(-12+4×weight)), calculate the odds ratio for a car weighing 4000 lbs compared to a car weighing 3000 lbs. Show your work and interpret the result.
 1. A researcher studying student success fitted a logistic regression model to predict whether students pass an exam based on hours studied. The fitted model is: $P(\text{pass} | \text{hours}) = 1/(1+\exp(-2.5+0.8\cdot\text{hours}))$. Interpret this model by: (a) calculating the odds of passing for a student who studies 5 hours vs. 3 hours, (b) determining how many hours of study correspond to a 50% probability of passing, and (c) explaining what happens to the probability of passing as study hours increase from 0 to 10.
 1. A clinical study used a Cox proportional hazards model to analyze time to hospital readmission for patients with different treatment protocols. The fitted model shows a coefficient of $\beta = 0.693$ for the variable "intensive_treatment" (1 = intensive, 0 = standard). The baseline hazard cancels out in the Cox model. Interpret this result by: (a) calculating the hazard ratio between intensive and standard treatment groups, (b) explaining what this means in practical terms for patient outcomes, and (c) discussing whether patients should prefer intensive or standard treatment based on this model.
-
